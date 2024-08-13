@@ -1,0 +1,8 @@
+Name = input("Enter Your Name:")
+Address = input("Enter Your address:")
+Contact = int(input("Enter Your Mobile No:"))
+Birth=input("Enter Your brith date:")
+print(Name)
+print(Address)
+print(Contact)
+print(Birth)

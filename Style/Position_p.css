@@ -1,0 +1,17 @@
+.relative {
+    position: relative;
+    border: 10px #ff0000 solid;
+    padding: 15px;
+}
+
+.absloute{
+    position: absolute;
+    border: #00ff 10px solid;
+    padding: 5px;
+}
+
+.static{
+    position: static;
+    border: #00ff00 10px solid;
+    padding: 15px;
+}

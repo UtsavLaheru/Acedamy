@@ -1,0 +1,71 @@
+.display {
+    display: inline;
+}
+
+.display1 {
+    display: block;
+}
+
+.display2 {
+    display: contents;
+}
+
+.display3 {
+    display: flex;
+}
+
+.display4 {
+    display: grid;
+}
+
+.display5 {
+    display: inline-block;
+}
+
+.display6 {
+    display: inline-flex;
+}
+
+.display7 {
+    display: inline-grid;
+}
+
+.display8 {
+    display: inline-table;
+}
+
+.display9 {
+    display: list-item;
+}
+
+.display10 {
+    display: run-in;
+}
+
+.display11 {
+    display: table;
+}
+
+.display12 {
+    display: table-caption;
+}
+
+.display13 {
+    display: table-column;
+}
+
+.display14 {
+    display: table-row;
+}
+
+.display15 {
+    display: none;
+}
+
+.display16 {
+    display: initial;
+}
+
+.display17{
+    display: inherit;
+}

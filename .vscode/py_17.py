@@ -1,0 +1,8 @@
+t=("i",j:=(10),"Name")
+print(t)
+liye=list(t)
+print(liye)
+liye.remove(j)
+print(liye)
+t=tuple(liye)
+print(t)

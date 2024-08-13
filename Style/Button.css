@@ -1,0 +1,15 @@
+.button{
+    color: #90f;
+    background-color: #7fff87;
+    cursor: pointer;
+    padding: 25px 30px 25px 30px;
+    margin: 25px 30px 25px 30px;
+}
+
+.link{
+    text-decoration: none;
+}
+
+.type{
+    cursor: pointer;
+}

@@ -1,0 +1,11 @@
+.margin{
+    border: solid 10px #00ff;
+    margin: 25px 700px 25px 700px;
+    text-align: center;   
+}
+
+.padding{
+    border: solid 10px #ff0f0f;
+    padding: 30px 40px 30px 40px;
+    text-align: center;
+}

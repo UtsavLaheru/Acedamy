@@ -1,0 +1,10 @@
+py_14=["c0", "c1","c3", "c2", "c4", "c5"]
+print(py_14)
+py_14.remove("c0")
+print(py_14)
+py=py_14.index("c3")
+print(py)
+py_14.sort()
+print(py_14)
+py_14.reverse()
+print(py_14)

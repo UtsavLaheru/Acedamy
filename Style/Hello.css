@@ -1,0 +1,45 @@
+.a {
+    display: inline-flex;
+    padding: 25px 25px 25px 25px;
+    background-color: #ff0000;
+}
+
+.b {
+    display: inline-flex;
+    padding: 25px 25px 25px 25px;
+    background-color: #ff0000;
+}
+
+.c {
+    display: inline-flex;
+    padding: 25px 25px 25px 25px;
+    background-color: #ff0000;
+}
+
+.d {
+    display: inline-flex;
+    padding: 25px 25px 25px 25px;
+    background-color: #ff0000;
+}
+
+@media only screen and (max-width:600px) {
+    .div {
+        display: flex;
+    }
+
+    .a {
+        background-color: #00ff00;
+    }
+
+    .b {
+        background-color: #00ff00;
+    }
+
+    .c {
+        background-color: #00ff00;
+    }
+
+    .d {
+        background-color: #00ff00;
+    }
+}
