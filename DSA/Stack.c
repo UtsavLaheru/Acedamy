@@ -1,23 +1,25 @@
 #include <stdio.h>
 #define max 5
-int stack[5];
+int stack[max];
 int top = -1;
 void display();
 void push();
 void pop();
 void tops();
+void change();
 
 void main()
 {
     int a;
-    while (a != 5)
+    printf("Option Menu For Stack \n");
+    printf("1.Push \n");
+    printf("2.Pop \n");
+    printf("3.Top \n");
+    printf("4.Display \n");
+    printf("5.Change\n");
+    printf("6.Quit\n");
+    while (a != 6)
     {
-        printf("Option Menu For Stack \n");
-        printf("1.Push \n");
-        printf("2.Pop \n");
-        printf("3.Top \n");
-        printf("4.Display \n");
-        printf("5.Exit\n");
         scanf("%d", &a);
         switch (a)
         {
@@ -34,6 +36,9 @@ void main()
             display();
             break;
         case 5:
+            change();
+            break;
+        case 6:
             printf("Quitting");
             break;
         default:
@@ -78,8 +83,29 @@ void tops()
 
 void display()
 {
+    printf("Display:\n");
     for (int i=top; i > -1; i--)
     {
         printf("%d\n", stack[i]);
+    }
+}
+
+void change()
+{
+    int target_index,value;
+    printf("Enter Index:");
+    scanf("%d",&target_index);
+    for (int i=top; i > -1; i--)
+    {
+        if(target_index == i)
+        {
+            printf("Enter Number:");
+            scanf("%d",&value);
+            stack[target_index] = value;
+        }
+        if(target_index > top)
+        {
+            printf("index Is Out Of Bound\n");
+        }
     }
 }
