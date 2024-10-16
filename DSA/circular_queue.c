@@ -6,23 +6,35 @@ int rear = -1;
 
 void insert()
 {
+
+    // printf("%d\n",rear);
     if((rear + 1) % MAX == front)
     {
         printf("Queue Overflow\n");
+        return;
+
     }
     else
     {
+        
         if (front == -1)
         {
             front = 0;
         }
-        
         int value;
         printf("Enter Number:");
         scanf("%d",&value);
-        rear = rear + 1;
+        if(rear != -1 && (rear + 1) % MAX == 0)    //Warp Around the Queue.
+        {
+            rear = 0;
+        }
+        else
+        {
+            rear = rear + 1;
+        }
         queue[rear] = value;
     }
+
 } 
 
 void delete()
@@ -35,7 +47,14 @@ void delete()
     {
         int del;
         del = queue[front];
-        front = front + 1;
+        if(front != -1 && (front + 1) % MAX == 0)       //Warp Around the Queue.
+        {
+            front = 0;
+        }
+        else
+        {
+            front = front + 1;
+        }
         printf("Deleted:%d\n",del);
     }
 }
