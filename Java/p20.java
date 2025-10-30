@@ -50,5 +50,6 @@ public class p20 {
         r1=num.nextFloat();
         c.r=r1;
         c.area();
+        num.close();
     }
 }

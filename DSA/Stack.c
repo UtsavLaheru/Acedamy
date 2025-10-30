@@ -66,7 +66,7 @@ void push()
 
 void pop()
 {
-    if (top <= 0)
+    if (top < 0)
     {
         printf("Stack Underflow\n");
     }

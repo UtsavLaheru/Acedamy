@@ -18,5 +18,6 @@
     "files.associations": {
         "stdio.h": "c"
     },
-    "terminal.explorerKind": "integrated"
+    "terminal.explorerKind": "integrated",
+    "liveServer.settings.port": 5501
 }
