@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-import pandas as pd
 
 months = ['January','Febuary','March','April','May']
 values = [10,20,35,25,55]
