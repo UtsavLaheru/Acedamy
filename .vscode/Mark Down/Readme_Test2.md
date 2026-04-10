@@ -9,7 +9,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: ;
+      background: transparent;
       font-family: "Jersey 10", sans-serif;
     }
 
