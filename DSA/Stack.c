@@ -66,14 +66,17 @@ void push()
 
 void pop()
 {
-    if (top < 0)
+    if (top == -1)
     {
         printf("Stack Underflow\n");
     }
-    int del;
-    del = stack[top];
-    top = top - 1;
-    printf("POPED Number: %d\n", del);
+    else
+    {
+        int del;
+        del = stack[top];
+        top = top - 1;
+        printf("POPED Number: %d\n", del);        
+    }
 }
 
 void tops()
