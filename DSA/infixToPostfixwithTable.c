@@ -3,6 +3,9 @@
 #define MAX 50
 char stack[MAX];
 int top = -1;
+int Sr = 0;
+int ip = 0;
+int io = 0;
 
 void push(char value)
 {
@@ -40,7 +43,7 @@ void peek()
 void display()
 {
     for (int i=top; i != -1; i--)
-        printf("%d. Stack:%c\n", i, stack[i]);
+        printf(" Stack:%c", stack[i]);
 }
 
 int priority(char p)
@@ -52,6 +55,14 @@ int priority(char p)
     if(p == '$')
         return 3;
     return 0;
+}
+
+void table(char *input, char *output)
+{
+    printf("%s", input[ip]);
+    display();
+    printf("%s\n", output);
+    ip++;
 }
 
 void InfixtoPrefix(char *input,char *output)
@@ -72,7 +83,6 @@ void InfixtoPrefix(char *input,char *output)
         {
             output[j] = pop();
             j += 1;
-            
             //Exception Handling for input's like "ip:+ stack:*+" and "ip:+ stack:$/";
             if((priority(stack[top]) == priority(input[i])) && top != -1)
             {
@@ -81,7 +91,7 @@ void InfixtoPrefix(char *input,char *output)
                 push(input[i]);
                 
             }
-            else if((priority(stack[top]) > priority(input[i])) && (priority(input[i]) == 1 || priority(input[i]) == 2) && top != -1)
+            if((priority(stack[top]) > priority(input[i])) && (priority(input[i]) == 1 || priority(input[i]) == 2) && top != -1)
             {
                 output[j] = pop();
                 j += 1;
@@ -93,7 +103,6 @@ void InfixtoPrefix(char *input,char *output)
         }
         if((priority(stack[top]) < priority(input[i])) && (priority(input[i]) == 2 || priority(input[i]) == 3) && top != -1)
             push(input[i]);
-        
         //Direct Insertion  
         if(input[i] >= 'a' && input[i] <= 'z' || input[i] >= 'A' && input[i] <= 'Z')
         {
@@ -102,18 +111,20 @@ void InfixtoPrefix(char *input,char *output)
         }
         if((input[i] == '+' || input[i] == '-' || input[i] == '*' || input[i] == '/' || input[i] == '$') && top == -1)
             push(input[i]);
-        
         //Help's In Displaying Stack Contains.
         // peek();
         // display();
     }
     
+    //Curruntly Working...
     while(top != -1)
     {
         output[j] = pop();
         j += 1;
         // printf("While Loop Runned\n");
+        // printf("output:%c, %d\n", output[j-1], j);
     }
+    // table(input, output);
     output[j] = '\0';
 }
 
@@ -125,6 +136,7 @@ void main()
     scanf("%s", &input);
     char output[30];
     InfixtoPrefix(input, output);
+    // printf("%d\n", strlen(output));
     printf("%s", output);
 }
 

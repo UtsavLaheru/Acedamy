@@ -99,7 +99,7 @@ void Postfix(char io[], char op[])
         }
         if (priority(io[i]) == priority(peek()))
         {
-            printf("if ranned")
+            printf("if ranned");
             j = j + 1;
             op[j] = pop();
             push(io[i]);
