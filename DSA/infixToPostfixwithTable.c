@@ -1,11 +1,9 @@
 #include <stdio.h>
-#include <string.h>
+#include <stdbool.h>
 #define MAX 50
 char stack[MAX];
 int top = -1;
-int Sr = 0;
-int ip = 0;
-int io = 0;
+bool once = true;
 
 void push(char value)
 {
@@ -15,9 +13,6 @@ void push(char value)
     {
         top = top + 1;
         stack[top] = value;
-        // printf("Enter Number:");
-        // scanf("%s", &value);
-        // char value;
     }
 }
 
@@ -43,7 +38,8 @@ void peek()
 void display()
 {
     for (int i=top; i != -1; i--)
-        printf(" Stack:%c", stack[i]);
+        printf("%c", stack[i]);    
+       // printf(" Stack:%c", stack[i]);
 }
 
 int priority(char p)
@@ -57,12 +53,24 @@ int priority(char p)
     return 0;
 }
 
-void table(char *input, char *output)
+void table(char *input, char *output, int i, int j)
 {
-    printf("%s", input[ip]);
+    if (once == true)
+    {
+        printf("infix      stack       postfix\n");
+        printf("------------------------------\n");
+        once = false;
+    }
+    printf("%c", input[i]);
+    printf("            ");
     display();
-    printf("%s\n", output);
-    ip++;
+    printf("%*s",top-12, "");
+    if(j != 0)
+    {
+        for(int i=0;i < j; i++)
+            printf("%c", output[i]);
+    }
+    printf("\n");
 }
 
 void InfixtoPrefix(char *input,char *output)
@@ -114,6 +122,9 @@ void InfixtoPrefix(char *input,char *output)
         //Help's In Displaying Stack Contains.
         // peek();
         // display();
+        
+        //it Display's a output table
+        table(input, output, i, j);
     }
     
     //Curruntly Working...
@@ -124,7 +135,6 @@ void InfixtoPrefix(char *input,char *output)
         // printf("While Loop Runned\n");
         // printf("output:%c, %d\n", output[j-1], j);
     }
-    // table(input, output);
     output[j] = '\0';
 }
 
@@ -136,8 +146,8 @@ void main()
     scanf("%s", &input);
     char output[30];
     InfixtoPrefix(input, output);
-    // printf("%d\n", strlen(output));
-    printf("%s", output);
+    printf("------------------------------\n");
+    printf("output:%21s", output);
 }
 
 //Learned:

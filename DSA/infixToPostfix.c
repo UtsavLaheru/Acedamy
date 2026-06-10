@@ -12,9 +12,6 @@ void push(char value)
     {
         top = top + 1;
         stack[top] = value;
-        // printf("Enter Number:");
-        // scanf("%s", &value);
-        // char value;
     }
 }
 
