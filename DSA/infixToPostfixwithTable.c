@@ -80,37 +80,41 @@ void InfixtoPrefix(char *input,char *output)
     {
         // printf("runned over the For Loop\n");
         //Type Checking
-        if((priority(stack[top]) == priority(input[i])) && top != -1)
+        if(top != -1)
         {
-            output[j] = pop();
-            j += 1;
-            push(input[i]);
             
-        }
-        if((priority(stack[top]) > priority(input[i])) && (priority(input[i]) == 1 || priority(input[i]) == 2) && top != -1)
-        {
-            output[j] = pop();
-            j += 1;
-            //Exception Handling for input's like "ip:+ stack:*+" and "ip:+ stack:$/";
-            if((priority(stack[top]) == priority(input[i])) && top != -1)
+            if((priority(stack[top]) == priority(input[i])))
             {
                 output[j] = pop();
                 j += 1;
                 push(input[i]);
                 
             }
-            if((priority(stack[top]) > priority(input[i])) && (priority(input[i]) == 1 || priority(input[i]) == 2) && top != -1)
+            if((priority(stack[top]) > priority(input[i])) && (priority(input[i]) == 1 || priority(input[i]) == 2))
             {
                 output[j] = pop();
                 j += 1;
-                push(input[j]); 
+                //Exception Handling for input's like "ip:+ stack:*+" and "ip:+ stack:$/";
+                if((priority(stack[top]) == priority(input[i])) && top != -1)
+                {
+                    output[j] = pop();
+                    j += 1;
+                    push(input[i]);
+                    
+                }
+                if((priority(stack[top]) > priority(input[i])) && (priority(input[i]) == 1 || priority(input[i]) == 2) && top != -1)
+                {
+                    output[j] = pop();
+                    j += 1;
+                    push(input[j]); 
+                }
+                else
+                    push(input[i]);
+                
             }
-            else
+            if((priority(stack[top]) < priority(input[i])) && (priority(input[i]) == 2 || priority(input[i]) == 3))
                 push(input[i]);
-            
         }
-        if((priority(stack[top]) < priority(input[i])) && (priority(input[i]) == 2 || priority(input[i]) == 3) && top != -1)
-            push(input[i]);
         //Direct Insertion  
         if(input[i] >= 'a' && input[i] <= 'z' || input[i] >= 'A' && input[i] <= 'Z')
         {
