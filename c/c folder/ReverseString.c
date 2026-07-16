@@ -18,9 +18,10 @@ void ReverseString(char *string)
     }
 }
 
-void main()
+int main()
 {
     char test[30] = "Hello World";
     ReverseString(test);
     printf("%s",test);
+    return 0;
 }
