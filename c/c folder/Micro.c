@@ -1,12 +1,12 @@
 #include <stdio.h>
-#include<conio.h>
+// #include <conio.h>
 int input()
 {
     int n, u = 0, n2 = 0;
-    printf("Enter Root:", n);
+    printf("Enter Root:");
     scanf("%d", &n);
     
-    printf("Enter The Number Of Nodes:", n2);
+    printf("Enter The Number Of Nodes:");
     scanf("%d", &n2);
     int arr[n2];
     for (int i=1;i<=n2;i++)
@@ -36,7 +36,7 @@ int input()
             printf("%d ",arr[i]);
         }
     }
-    
+    printf("\n");
 };
 int main()
 {

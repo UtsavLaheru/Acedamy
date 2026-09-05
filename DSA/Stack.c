@@ -8,7 +8,7 @@ void pop();
 void tops();
 void change();
 
-void main()
+int main()
 {
     int a;
     printf("Option Menu For Stack \n");
@@ -39,19 +39,20 @@ void main()
             change();
             break;
         case 6:
-            printf("Quitting");
+            printf("Quitting\n");
             break;
         default:
             printf("You Have Entered Wrong Number\n");
             break;
         }
     }
+    return 0;
 }
 
 void push()
 {
     int value;
-    if (top == max)
+    if (top == max - 1)
     {
         printf("Stack Overflow\n");
     }
@@ -112,3 +113,6 @@ void change()
         }
     }
 }
+
+//Fun TO Know: The Stack can store 6 items due to Stack being array that start
+//and end at MAX meaning 5 in thiis sinearo so Stack Range is 0 to 5 

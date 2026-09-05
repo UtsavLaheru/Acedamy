@@ -131,7 +131,6 @@ void InfixtoPrefix(char *input,char *output)
         table(input, output, i, j);
     }
     
-    //Curruntly Working...
     while(top != -1)
     {
         output[j] = pop();
@@ -147,11 +146,11 @@ void main()
 {
     char input[30];
     printf("Enter Infix:");
-    scanf("%s", &input);
+    scanf("%s", input);
     char output[30];
     InfixtoPrefix(input, output);
     printf("------------------------------\n");
-    printf("output:%21s", output);
+    printf("output:%21s\n", output);
 }
 
 //Learned:
